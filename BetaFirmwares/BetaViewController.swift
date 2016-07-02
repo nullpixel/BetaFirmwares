@@ -11,56 +11,89 @@ import SwiftyJSON
 
 class BetaViewController: UITableViewController {
     
-    var betaFirmwares = [String]()
+    var betaFirmwares = [String: Firmware]()
+    var hasAppeared = false
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.parseJSON()
+    override func viewWillAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if !hasAppeared {
+            self.refreshControl?.beginRefreshing()
+            self.startReceive()
+            hasAppeared = true
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
 
     // MARK: - Table view data source
 
     override func tableView(tableView: UITableView,
                    cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         
-        let cell:UITableViewCell = UITableViewCell(style:UITableViewCellStyle.Default, reuseIdentifier:"cell")
-        cell.textLabel?.text = betaFirmwares[indexPath.row]
+        let firmware = betaFirmwares[betaFirmwares.keyOfIndex(indexPath.row)]!
+        
+        cell.textLabel?.text = firmware.name
+        let deviceCount = firmware.supportedDevices.count
+        cell.detailTextLabel?.text = "\(firmware.buildNumber) - \(deviceCount) device\(deviceCount == 1 ? "" : "s")"
         
         return cell
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let firmware = betaFirmwares[betaFirmwares.keyOfIndex(indexPath.row)]
+        self.performSegueWithIdentifier("ShowDetail", sender: firmware)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.betaFirmwares.count;
+        return self.betaFirmwares.count
     }
     
-    //MARK: Parse JSON
-    func parseJSON() {
-        //Setup Parsing variables.
-        let urlToParse = "https://api.ipsw.me/v2.1/ota.json" //Thanks to ipsw.me for having a cool API.
-        let url = NSURL(string: urlToParse)
-        let OTAJSON = try! NSData(contentsOfURL: url!)
-        let json = JSON(data: OTAJSON!)
-        // Loop through every device
-        // Thanks to /u/AppleBeta's for this part.
-        for (_, device) in json.dictionaryValue {
-            if let firmwares = device["firmwares"].array {
-                for firmware in firmwares {
-                    if let version = firmware["version"].string, releaseType = firmware["releasetype"].string where !betaFirmwares.contains(version) && releaseType == "Beta" {
-                        betaFirmwares.append(version)
+    // MARK: - Start receiving JSON
+    func startReceive() {
+        DataReceiver.sharedInstance.getJSON() { json in
+            guard let json = json else {
+                let alert = UIAlertController(title: "Couldn't receive betas", message: "An error occurred while trying ot receive a list of the current betas on the OTA server.", preferredStyle: .Alert)
+                let action = UIAlertAction(title: "Try Again", style: .Default, handler: { _ in
+                    self.startReceive()
+                })
+                alert.addAction(action)
+                self.presentViewController(alert, animated: true, completion: nil)
+                return
+            }
+            for (deviceID, device) in json.dictionaryValue {
+                if let firmwares = device["firmwares"].array, deviceName = device["name"].string {
+                    for firmware in firmwares {
+                        if let version = firmware["version"].string, releaseType = firmware["releasetype"].string, buildNumber = firmware["buildid"].string where releaseType == "Beta" {
+                            let device = Device(name: deviceName, identifier: deviceID)
+                            if !self.betaFirmwares.keys.contains(version) {
+                                self.betaFirmwares[version] = Firmware(name: version, buildNumber: buildNumber, supportedDevices: [device])
+                            } else {
+                                self.betaFirmwares[version]!.supportedDevices.append(device)
+                            }
+                        } else {
+                            
+                        }
                     }
                 }
             }
+            dispatch_async(dispatch_get_main_queue()) {
+                self.tableView.reloadData()
+                self.refreshControl?.endRefreshing()
+            }
         }
-        
-        debugPrint(betaFirmwares)
     }
 
-   
+    @IBAction func refreshCalled(sender: AnyObject) {
+        self.startReceive()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+        if let firmware = sender as? Firmware, let destVC = segue.destinationViewController as? DetailViewController where segue.identifier == "ShowDetail" {
+            destVC.firmware = firmware
+        }
+    }
+    
 }
