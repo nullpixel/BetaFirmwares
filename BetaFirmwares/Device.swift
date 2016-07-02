@@ -8,6 +8,10 @@
 
 import Foundation
 
-struct Device {
+struct Device: Equatable {
     let name: String, identifier: String
+}
+
+func ==(lhs: Device, rhs: Device) -> Bool {
+    return lhs.identifier == rhs.identifier
 }

@@ -55,7 +55,7 @@ class BetaViewController: UITableViewController {
         DataReceiver.sharedInstance.getJSON() { json in
             guard let json = json else {
                 let alert = UIAlertController(title: "Couldn't receive betas", message: "An error occurred while trying ot receive a list of the current betas on the OTA server.", preferredStyle: .Alert)
-                let action = UIAlertAction(title: "Try Again", style: .Default, handler: { _ in
+                let action = UIAlertAction(title: "Try Again", style: .Cancel, handler: { _ in
                     self.startReceive()
                 })
                 alert.addAction(action)
@@ -70,7 +70,7 @@ class BetaViewController: UITableViewController {
                             let device = Device(name: deviceName, identifier: deviceID)
                             if !self.betaFirmwares.keys.contains(version) {
                                 self.betaFirmwares[version] = Firmware(name: version, buildNumber: buildNumber, supportedDevices: [device])
-                            } else {
+                            } else if !self.betaFirmwares[version]!.supportedDevices.contains(device) {
                                 self.betaFirmwares[version]!.supportedDevices.append(device)
                             }
                         }
