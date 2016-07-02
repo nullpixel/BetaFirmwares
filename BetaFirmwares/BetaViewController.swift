@@ -62,6 +62,7 @@ class BetaViewController: UITableViewController {
                 self.presentViewController(alert, animated: true, completion: nil)
                 return
             }
+            self.betaFirmwares = [String: Firmware]()
             for (deviceID, device) in json.dictionaryValue {
                 if let firmwares = device["firmwares"].array, deviceName = device["name"].string {
                     for firmware in firmwares {
@@ -72,8 +73,6 @@ class BetaViewController: UITableViewController {
                             } else {
                                 self.betaFirmwares[version]!.supportedDevices.append(device)
                             }
-                        } else {
-                            
                         }
                     }
                 }
