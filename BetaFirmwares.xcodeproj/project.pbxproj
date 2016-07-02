@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1717BBBF1D27C8CF004FF7C2 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1717BBB01D27C8C6004FF7C2 /* SwiftyJSON.framework */; };
 		1773FB161D27A1BD00C2EB6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1773FB151D27A1BD00C2EB6B /* AppDelegate.swift */; };
 		1773FB1B1D27A1BD00C2EB6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1773FB191D27A1BD00C2EB6B /* Main.storyboard */; };
 		1773FB1D1D27A1BD00C2EB6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1773FB1C1D27A1BD00C2EB6B /* Assets.xcassets */; };
 		1773FB201D27A1BD00C2EB6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1773FB1E1D27A1BD00C2EB6B /* LaunchScreen.storyboard */; };
 		1779B4BF1D281F9F001C4A1F /* BetaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779B4BE1D281F9F001C4A1F /* BetaViewController.swift */; };
-		1787B7CD1D28123800C918C1 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 1787B7CC1D28123800C918C1 /* info.png */; };
-		1787B7CF1D28126D00C918C1 /* info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1787B7CE1D28126D00C918C1 /* info@2x.png */; };
+		980B6F501D2821FD00DC663F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1717BBB01D27C8C6004FF7C2 /* SwiftyJSON.framework */; };
+		980B6F511D2821FD00DC663F /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1717BBB01D27C8C6004FF7C2 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		980B6F561D2826BD00DC663F /* DataReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980B6F551D2826BD00DC663F /* DataReceiver.swift */; };
+		980B6F581D28304A00DC663F /* Firmware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980B6F571D28304A00DC663F /* Firmware.swift */; };
+		980B6F5A1D2832DD00DC663F /* Dictonary+KeyIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980B6F591D2832DD00DC663F /* Dictonary+KeyIndex.swift */; };
+		980B6F5C1D2836F400DC663F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980B6F5B1D2836F400DC663F /* DetailViewController.swift */; };
+		980B6F5E1D283A5800DC663F /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980B6F5D1D283A5800DC663F /* Device.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +78,28 @@
 			remoteGlobalIDString = 2E4FEFDA19575BE100351305;
 			remoteInfo = "SwiftyJSON iOS";
 		};
+		980B6F521D2821FD00DC663F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1717BBA51D27C8C6004FF7C2 /* SwiftyJSON.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E4FEFDA19575BE100351305;
+			remoteInfo = "SwiftyJSON iOS";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		980B6F541D2821FD00DC663F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				980B6F511D2821FD00DC663F /* SwiftyJSON.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1717BBA51D27C8C6004FF7C2 /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = BetaFirmwares/SwiftyJSON/SwiftyJSON.xcodeproj; sourceTree = "<group>"; };
@@ -85,8 +110,11 @@
 		1773FB1F1D27A1BD00C2EB6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1773FB211D27A1BD00C2EB6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1779B4BE1D281F9F001C4A1F /* BetaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetaViewController.swift; sourceTree = "<group>"; };
-		1787B7CC1D28123800C918C1 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
-		1787B7CE1D28126D00C918C1 /* info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info@2x.png"; sourceTree = "<group>"; };
+		980B6F551D2826BD00DC663F /* DataReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataReceiver.swift; sourceTree = "<group>"; };
+		980B6F571D28304A00DC663F /* Firmware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Firmware.swift; sourceTree = "<group>"; };
+		980B6F591D2832DD00DC663F /* Dictonary+KeyIndex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictonary+KeyIndex.swift"; sourceTree = "<group>"; };
+		980B6F5B1D2836F400DC663F /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		980B6F5D1D283A5800DC663F /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1717BBBF1D27C8CF004FF7C2 /* SwiftyJSON.framework in Frameworks */,
+				980B6F501D2821FD00DC663F /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,10 +146,9 @@
 		1773FB091D27A1BD00C2EB6B = {
 			isa = PBXGroup;
 			children = (
-				1717BBA51D27C8C6004FF7C2 /* SwiftyJSON.xcodeproj */,
 				1773FB141D27A1BD00C2EB6B /* BetaFirmwares */,
+				1717BBA51D27C8C6004FF7C2 /* SwiftyJSON.xcodeproj */,
 				1773FB131D27A1BD00C2EB6B /* Products */,
-				1787B7C11D28118700C918C1 /* Icons */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,22 +165,17 @@
 			children = (
 				1773FB151D27A1BD00C2EB6B /* AppDelegate.swift */,
 				1779B4BE1D281F9F001C4A1F /* BetaViewController.swift */,
+				980B6F5B1D2836F400DC663F /* DetailViewController.swift */,
+				980B6F591D2832DD00DC663F /* Dictonary+KeyIndex.swift */,
+				980B6F571D28304A00DC663F /* Firmware.swift */,
+				980B6F551D2826BD00DC663F /* DataReceiver.swift */,
 				1773FB191D27A1BD00C2EB6B /* Main.storyboard */,
+				980B6F5D1D283A5800DC663F /* Device.swift */,
 				1773FB1C1D27A1BD00C2EB6B /* Assets.xcassets */,
 				1773FB1E1D27A1BD00C2EB6B /* LaunchScreen.storyboard */,
 				1773FB211D27A1BD00C2EB6B /* Info.plist */,
 			);
 			path = BetaFirmwares;
-			sourceTree = "<group>";
-		};
-		1787B7C11D28118700C918C1 /* Icons */ = {
-			isa = PBXGroup;
-			children = (
-				1787B7CC1D28123800C918C1 /* info.png */,
-				1787B7CE1D28126D00C918C1 /* info@2x.png */,
-			);
-			name = Icons;
-			path = BetaFirmwares/Icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,11 +188,13 @@
 				1773FB0E1D27A1BD00C2EB6B /* Sources */,
 				1773FB0F1D27A1BD00C2EB6B /* Frameworks */,
 				1773FB101D27A1BD00C2EB6B /* Resources */,
+				980B6F541D2821FD00DC663F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				1717BBBE1D27C8CC004FF7C2 /* PBXTargetDependency */,
+				980B6F531D2821FD00DC663F /* PBXTargetDependency */,
 			);
 			name = BetaFirmwares;
 			productName = BetaFirmwares;
@@ -275,9 +299,7 @@
 			files = (
 				1773FB201D27A1BD00C2EB6B /* LaunchScreen.storyboard in Resources */,
 				1773FB1D1D27A1BD00C2EB6B /* Assets.xcassets in Resources */,
-				1787B7CF1D28126D00C918C1 /* info@2x.png in Resources */,
 				1773FB1B1D27A1BD00C2EB6B /* Main.storyboard in Resources */,
-				1787B7CD1D28123800C918C1 /* info.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +311,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1779B4BF1D281F9F001C4A1F /* BetaViewController.swift in Sources */,
+				980B6F561D2826BD00DC663F /* DataReceiver.swift in Sources */,
+				980B6F581D28304A00DC663F /* Firmware.swift in Sources */,
+				980B6F5C1D2836F400DC663F /* DetailViewController.swift in Sources */,
 				1773FB161D27A1BD00C2EB6B /* AppDelegate.swift in Sources */,
+				980B6F5E1D283A5800DC663F /* Device.swift in Sources */,
+				980B6F5A1D2832DD00DC663F /* Dictonary+KeyIndex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +327,11 @@
 			isa = PBXTargetDependency;
 			name = "SwiftyJSON iOS";
 			targetProxy = 1717BBBD1D27C8CC004FF7C2 /* PBXContainerItemProxy */;
+		};
+		980B6F531D2821FD00DC663F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SwiftyJSON iOS";
+			targetProxy = 980B6F521D2821FD00DC663F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -410,6 +442,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = BetaFirmwares/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -422,6 +456,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = BetaFirmwares/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
