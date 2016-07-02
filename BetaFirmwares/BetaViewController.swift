@@ -52,7 +52,7 @@ class BetaViewController: UITableViewController {
         for (_, device) in json.dictionaryValue {
             if let firmwares = device["firmwares"].array {
                 for firmware in firmwares {
-                    if let version = firmware["version"].string where !betaFirmwares.contains(version) {
+                    if let version = firmware["version"].string, releaseType = firmware["releasetype"].string where !betaFirmwares.contains(version) && releaseType == "Beta" {
                         betaFirmwares.append(version)
                     }
                 }
