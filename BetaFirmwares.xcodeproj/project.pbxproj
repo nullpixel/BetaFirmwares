@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1717BBBF1D27C8CF004FF7C2 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1717BBB01D27C8C6004FF7C2 /* SwiftyJSON.framework */; };
 		1773FB161D27A1BD00C2EB6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1773FB151D27A1BD00C2EB6B /* AppDelegate.swift */; };
 		1773FB181D27A1BD00C2EB6B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1773FB171D27A1BD00C2EB6B /* ViewController.swift */; };
 		1773FB1B1D27A1BD00C2EB6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1773FB191D27A1BD00C2EB6B /* Main.storyboard */; };
@@ -14,7 +15,67 @@
 		1773FB201D27A1BD00C2EB6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1773FB1E1D27A1BD00C2EB6B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1717BBAF1D27C8C6004FF7C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1717BBA51D27C8C6004FF7C2 /* SwiftyJSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2E4FEFDB19575BE100351305;
+			remoteInfo = "SwiftyJSON iOS";
+		};
+		1717BBB11D27C8C6004FF7C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1717BBA51D27C8C6004FF7C2 /* SwiftyJSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2E4FEFE619575BE100351305;
+			remoteInfo = "SwiftyJSON iOS Tests";
+		};
+		1717BBB31D27C8C6004FF7C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1717BBA51D27C8C6004FF7C2 /* SwiftyJSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9C7DFC5B1A9102BD005AA3F7;
+			remoteInfo = "SwiftyJSON OSX";
+		};
+		1717BBB51D27C8C6004FF7C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1717BBA51D27C8C6004FF7C2 /* SwiftyJSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9C7DFC651A9102BD005AA3F7;
+			remoteInfo = "SwiftyJSON OSX Tests";
+		};
+		1717BBB71D27C8C6004FF7C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1717BBA51D27C8C6004FF7C2 /* SwiftyJSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E4D7CCE81B9465A700EE7221;
+			remoteInfo = "SwiftyJSON watchOS";
+		};
+		1717BBB91D27C8C6004FF7C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1717BBA51D27C8C6004FF7C2 /* SwiftyJSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7236B4F61BAC14150020529B;
+			remoteInfo = "SwiftyJSON tvOS";
+		};
+		1717BBBB1D27C8C6004FF7C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1717BBA51D27C8C6004FF7C2 /* SwiftyJSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A8580F741BCF5C5B00DA927B;
+			remoteInfo = "SwiftyJSON tvOS Tests";
+		};
+		1717BBBD1D27C8CC004FF7C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1717BBA51D27C8C6004FF7C2 /* SwiftyJSON.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E4FEFDA19575BE100351305;
+			remoteInfo = "SwiftyJSON iOS";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		1717BBA51D27C8C6004FF7C2 /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = BetaFirmwares/SwiftyJSON/SwiftyJSON.xcodeproj; sourceTree = "<group>"; };
 		1773FB121D27A1BD00C2EB6B /* BetaFirmwares.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetaFirmwares.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1773FB151D27A1BD00C2EB6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1773FB171D27A1BD00C2EB6B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,15 +90,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1717BBBF1D27C8CF004FF7C2 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1717BBA61D27C8C6004FF7C2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1717BBB01D27C8C6004FF7C2 /* SwiftyJSON.framework */,
+				1717BBB21D27C8C6004FF7C2 /* SwiftyJSON iOS Tests.xctest */,
+				1717BBB41D27C8C6004FF7C2 /* SwiftyJSON.framework */,
+				1717BBB61D27C8C6004FF7C2 /* SwiftyJSON OSX Tests.xctest */,
+				1717BBB81D27C8C6004FF7C2 /* SwiftyJSON.framework */,
+				1717BBBA1D27C8C6004FF7C2 /* SwiftyJSON.framework */,
+				1717BBBC1D27C8C6004FF7C2 /* SwiftyJSON tvOS Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		1773FB091D27A1BD00C2EB6B = {
 			isa = PBXGroup;
 			children = (
+				1717BBA51D27C8C6004FF7C2 /* SwiftyJSON.xcodeproj */,
 				1773FB141D27A1BD00C2EB6B /* BetaFirmwares */,
 				1773FB131D27A1BD00C2EB6B /* Products */,
 			);
@@ -78,6 +155,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				1717BBBE1D27C8CC004FF7C2 /* PBXTargetDependency */,
 			);
 			name = BetaFirmwares;
 			productName = BetaFirmwares;
@@ -110,12 +188,70 @@
 			mainGroup = 1773FB091D27A1BD00C2EB6B;
 			productRefGroup = 1773FB131D27A1BD00C2EB6B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1717BBA61D27C8C6004FF7C2 /* Products */;
+					ProjectRef = 1717BBA51D27C8C6004FF7C2 /* SwiftyJSON.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1773FB111D27A1BD00C2EB6B /* BetaFirmwares */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1717BBB01D27C8C6004FF7C2 /* SwiftyJSON.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftyJSON.framework;
+			remoteRef = 1717BBAF1D27C8C6004FF7C2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1717BBB21D27C8C6004FF7C2 /* SwiftyJSON iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SwiftyJSON iOS Tests.xctest";
+			remoteRef = 1717BBB11D27C8C6004FF7C2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1717BBB41D27C8C6004FF7C2 /* SwiftyJSON.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftyJSON.framework;
+			remoteRef = 1717BBB31D27C8C6004FF7C2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1717BBB61D27C8C6004FF7C2 /* SwiftyJSON OSX Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SwiftyJSON OSX Tests.xctest";
+			remoteRef = 1717BBB51D27C8C6004FF7C2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1717BBB81D27C8C6004FF7C2 /* SwiftyJSON.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftyJSON.framework;
+			remoteRef = 1717BBB71D27C8C6004FF7C2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1717BBBA1D27C8C6004FF7C2 /* SwiftyJSON.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftyJSON.framework;
+			remoteRef = 1717BBB91D27C8C6004FF7C2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1717BBBC1D27C8C6004FF7C2 /* SwiftyJSON tvOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SwiftyJSON tvOS Tests.xctest";
+			remoteRef = 1717BBBB1D27C8C6004FF7C2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1773FB101D27A1BD00C2EB6B /* Resources */ = {
@@ -141,6 +277,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1717BBBE1D27C8CC004FF7C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SwiftyJSON iOS";
+			targetProxy = 1717BBBD1D27C8CC004FF7C2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1773FB191D27A1BD00C2EB6B /* Main.storyboard */ = {
@@ -250,6 +394,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BetaFirmwares/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.nullpixel.BetaFirmwares;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -261,6 +406,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BetaFirmwares/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.nullpixel.BetaFirmwares;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -286,6 +432,7 @@
 				1773FB261D27A1BD00C2EB6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
