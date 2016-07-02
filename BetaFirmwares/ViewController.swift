@@ -51,11 +51,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let OTAJSON = try! NSData(contentsOfURL: url!)
         let json = JSON(data: OTAJSON!)
         // Loop through every device
-        // Thanks to /u/AppleBeta's for this part.
+        // Thanks to /u/AppleBetas for this part.
         for (_, device) in json.dictionaryValue {
             if let firmwares = device["firmwares"].array {
                 for firmware in firmwares {
-                    if let version = firmware["version"].string where !betaFirmwares.contains(version) {
+                    if let version = firmware["version"].string, releaseType = firmware["releasetype"].string where !betaFirmwares.contains(version) && releaseType == "Beta" {
                         betaFirmwares.append(version)
                     }
                 }
