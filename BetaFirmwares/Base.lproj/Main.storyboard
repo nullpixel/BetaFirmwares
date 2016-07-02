@@ -67,6 +67,9 @@
                     <navigationItem key="navigationItem" title="Betas" id="k4f-9U-OgC"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="2G7-1u-TUO">
                         <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refreshCalled:" destination="uEB-Fz-gzM" eventType="valueChanged" id="wio-Ki-YEJ"/>
+                        </connections>
                     </refreshControl>
                     <connections>
                         <segue destination="nbJ-IU-xUQ" kind="show" identifier="ShowDetail" id="0MT-Py-Ffj"/>
@@ -164,6 +167,7 @@
                     <connections>
                         <outlet property="buildLabel" destination="G96-xK-ODA" id="jTQ-eM-wZa"/>
                         <outlet property="deviceCountLabel" destination="DP4-ng-eX4" id="vq1-jY-Fmq"/>
+                        <outlet property="headerView" destination="59J-aC-78J" id="mAU-I1-4oo"/>
                         <outlet property="versionLabel" destination="Na0-3J-yWZ" id="gp7-eL-6VK"/>
                     </connections>
                 </tableViewController>
@@ -180,10 +184,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection footerTitle="This app is still in beta" id="frr-es-2TD">
+                            <tableViewSection headerTitle="Credits" footerTitle="This app is still in beta" id="frr-es-2TD">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="JvB-dv-46B" style="IBUITableViewCellStyleDefault" id="KQA-hC-ArI">
-                                        <rect key="frame" x="0.0" y="99" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="114" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KQA-hC-ArI" id="F99-jC-VZl">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -200,7 +204,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="8WC-GT-y1J" style="IBUITableViewCellStyleDefault" id="JBr-Ci-peX">
-                                        <rect key="frame" x="0.0" y="143" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="158" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JBr-Ci-peX" id="oz1-1S-X9V">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -249,11 +253,11 @@
             </objects>
             <point key="canvasLocation" x="3389.5999999999999" y="12.143928035982009"/>
         </scene>
-        <!--Info-->
+        <!--About-->
         <scene sceneID="Uy6-Jx-GOq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yMn-tv-Sh6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Info" image="Info" selectedImage="Info Active" id="Wkw-d2-Lqe"/>
+                    <tabBarItem key="tabBarItem" title="About" image="Info" selectedImage="Info Active" id="Wkw-d2-Lqe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GQa-4X-6RC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
