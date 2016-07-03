@@ -15,8 +15,8 @@ class DataReceiver: NSObject {
     private let jsonURL = NSURL(string: "https://api.ipsw.me/v2.1/ota.json")!
     
     func getJSON(completionHandler: (JSON?) -> Void) {
-        let request = NSURLRequest(URL: jsonURL, cachePolicy: .ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 5)
-        
+        let request = NSURLRequest(URL: jsonURL, cachePolicy: .ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
+
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error -> Void in
             if let jsonData = data {
                 let json = JSON(data: jsonData)
