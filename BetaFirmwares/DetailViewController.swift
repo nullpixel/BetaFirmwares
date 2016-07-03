@@ -36,6 +36,13 @@ class DetailViewController: UITableViewController {
         self.updateHeaderView()
     }
     
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+        coordinator.animateAlongsideTransition({ _ in
+            self.updateHeaderView()
+        }, completion: nil)
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         doneHeaderView = true
