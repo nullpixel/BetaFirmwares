@@ -11,7 +11,7 @@ import UIKit
 class DetailViewController: UITableViewController {
     var firmware: Firmware!
     
-    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var headerView: HairlineView!
     @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var buildLabel: UILabel!
     @IBOutlet weak var deviceCountLabel: UILabel!
@@ -32,7 +32,15 @@ class DetailViewController: UITableViewController {
         self.tableView.addSubview(self.headerView)
         
         self.tableView.contentInset.top += self.tableHeaderHeight - self.topLayoutGuide.length
+        self.tableView.contentOffset.y = -self.tableHeaderHeight
         self.updateHeaderView()
+    }
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+        coordinator.animateAlongsideTransition({ _ in
+            self.updateHeaderView()
+        }, completion: nil)
     }
     
     override func viewDidAppear(animated: Bool) {
