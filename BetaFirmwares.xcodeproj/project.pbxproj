@@ -20,6 +20,7 @@
 		980B6F5A1D2832DD00DC663F /* Dictonary+KeyIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980B6F591D2832DD00DC663F /* Dictonary+KeyIndex.swift */; };
 		980B6F5C1D2836F400DC663F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980B6F5B1D2836F400DC663F /* DetailViewController.swift */; };
 		980B6F5E1D283A5800DC663F /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980B6F5D1D283A5800DC663F /* Device.swift */; };
+		9853F35C1D296B1A00A8AB3F /* HairlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9853F35B1D296B1A00A8AB3F /* HairlineView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		980B6F591D2832DD00DC663F /* Dictonary+KeyIndex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictonary+KeyIndex.swift"; sourceTree = "<group>"; };
 		980B6F5B1D2836F400DC663F /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		980B6F5D1D283A5800DC663F /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		9853F35B1D296B1A00A8AB3F /* HairlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HairlineView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,8 +150,8 @@
 		1773FB091D27A1BD00C2EB6B = {
 			isa = PBXGroup;
 			children = (
-				1717BBA51D27C8C6004FF7C2 /* SwiftyJSON.xcodeproj */,
 				1773FB141D27A1BD00C2EB6B /* BetaFirmwares */,
+				1717BBA51D27C8C6004FF7C2 /* SwiftyJSON.xcodeproj */,
 				1773FB131D27A1BD00C2EB6B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -168,6 +170,7 @@
 				1773FB151D27A1BD00C2EB6B /* AppDelegate.swift */,
 				1779B4BE1D281F9F001C4A1F /* BetaViewController.swift */,
 				980B6F5B1D2836F400DC663F /* DetailViewController.swift */,
+				9853F35B1D296B1A00A8AB3F /* HairlineView.swift */,
 				17DD3C501D28522300795924 /* InfoPageController.swift */,
 				980B6F591D2832DD00DC663F /* Dictonary+KeyIndex.swift */,
 				980B6F571D28304A00DC663F /* Firmware.swift */,
@@ -216,7 +219,6 @@
 				TargetAttributes = {
 					1773FB111D27A1BD00C2EB6B = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 56WZJC7332;
 					};
 				};
 			};
@@ -322,6 +324,7 @@
 				1773FB161D27A1BD00C2EB6B /* AppDelegate.swift in Sources */,
 				980B6F5E1D283A5800DC663F /* Device.swift in Sources */,
 				980B6F5A1D2832DD00DC663F /* Dictonary+KeyIndex.swift in Sources */,
+				9853F35C1D296B1A00A8AB3F /* HairlineView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

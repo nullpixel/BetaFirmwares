@@ -11,7 +11,7 @@ import UIKit
 class DetailViewController: UITableViewController {
     var firmware: Firmware!
     
-    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var headerView: HairlineView!
     @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var buildLabel: UILabel!
     @IBOutlet weak var deviceCountLabel: UILabel!
