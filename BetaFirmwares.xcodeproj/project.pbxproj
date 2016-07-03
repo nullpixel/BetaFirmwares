@@ -12,6 +12,7 @@
 		1773FB1D1D27A1BD00C2EB6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1773FB1C1D27A1BD00C2EB6B /* Assets.xcassets */; };
 		1773FB201D27A1BD00C2EB6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1773FB1E1D27A1BD00C2EB6B /* LaunchScreen.storyboard */; };
 		1779B4BF1D281F9F001C4A1F /* BetaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779B4BE1D281F9F001C4A1F /* BetaViewController.swift */; };
+		17DD3C511D28522300795924 /* InfoPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DD3C501D28522300795924 /* InfoPageController.swift */; };
 		980B6F501D2821FD00DC663F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1717BBB01D27C8C6004FF7C2 /* SwiftyJSON.framework */; };
 		980B6F511D2821FD00DC663F /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1717BBB01D27C8C6004FF7C2 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		980B6F561D2826BD00DC663F /* DataReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980B6F551D2826BD00DC663F /* DataReceiver.swift */; };
@@ -110,6 +111,7 @@
 		1773FB1F1D27A1BD00C2EB6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1773FB211D27A1BD00C2EB6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1779B4BE1D281F9F001C4A1F /* BetaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetaViewController.swift; sourceTree = "<group>"; };
+		17DD3C501D28522300795924 /* InfoPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoPageController.swift; sourceTree = "<group>"; };
 		980B6F551D2826BD00DC663F /* DataReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataReceiver.swift; sourceTree = "<group>"; };
 		980B6F571D28304A00DC663F /* Firmware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Firmware.swift; sourceTree = "<group>"; };
 		980B6F591D2832DD00DC663F /* Dictonary+KeyIndex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictonary+KeyIndex.swift"; sourceTree = "<group>"; };
@@ -146,8 +148,8 @@
 		1773FB091D27A1BD00C2EB6B = {
 			isa = PBXGroup;
 			children = (
-				1773FB141D27A1BD00C2EB6B /* BetaFirmwares */,
 				1717BBA51D27C8C6004FF7C2 /* SwiftyJSON.xcodeproj */,
+				1773FB141D27A1BD00C2EB6B /* BetaFirmwares */,
 				1773FB131D27A1BD00C2EB6B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -166,6 +168,7 @@
 				1773FB151D27A1BD00C2EB6B /* AppDelegate.swift */,
 				1779B4BE1D281F9F001C4A1F /* BetaViewController.swift */,
 				980B6F5B1D2836F400DC663F /* DetailViewController.swift */,
+				17DD3C501D28522300795924 /* InfoPageController.swift */,
 				980B6F591D2832DD00DC663F /* Dictonary+KeyIndex.swift */,
 				980B6F571D28304A00DC663F /* Firmware.swift */,
 				980B6F551D2826BD00DC663F /* DataReceiver.swift */,
@@ -213,6 +216,7 @@
 				TargetAttributes = {
 					1773FB111D27A1BD00C2EB6B = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 56WZJC7332;
 					};
 				};
 			};
@@ -310,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17DD3C511D28522300795924 /* InfoPageController.swift in Sources */,
 				1779B4BF1D281F9F001C4A1F /* BetaViewController.swift in Sources */,
 				980B6F561D2826BD00DC663F /* DataReceiver.swift in Sources */,
 				980B6F581D28304A00DC663F /* Firmware.swift in Sources */,
