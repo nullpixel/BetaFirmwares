@@ -96,6 +96,8 @@ class BetaViewController: UITableViewController {
         self.startReceive()
     }
     
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
         if let firmware = sender as? Firmware, let destVC = segue.destinationViewController as? DetailViewController where segue.identifier == "ShowDetail" {
