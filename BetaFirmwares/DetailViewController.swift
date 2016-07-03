@@ -32,6 +32,7 @@ class DetailViewController: UITableViewController {
         self.tableView.addSubview(self.headerView)
         
         self.tableView.contentInset.top += self.tableHeaderHeight - self.topLayoutGuide.length
+        self.tableView.contentOffset.y = -self.tableHeaderHeight
         self.updateHeaderView()
     }
     
