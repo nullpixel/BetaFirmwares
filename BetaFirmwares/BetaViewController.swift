@@ -76,10 +76,10 @@ class BetaViewController: UITableViewController {
                         for firmware in firmwares {
                             if let version = firmware["version"].string, releaseType = firmware["releasetype"].string, buildNumber = firmware["buildid"].string where releaseType == "Beta" {
                                 let device = Device(name: deviceName, identifier: deviceID)
-                                if !self.betaFirmwares.keys.contains(version) {
-                                    self.betaFirmwares[version] = Firmware(name: version, buildNumber: buildNumber, supportedDevices: [device])
-                                } else if !self.betaFirmwares[version]!.supportedDevices.contains(device) {
-                                    self.betaFirmwares[version]!.supportedDevices.append(device)
+                                if !self.betaFirmwares.keys.contains(buildNumber) {
+                                    self.betaFirmwares[buildNumber] = Firmware(name: version, buildNumber: buildNumber, supportedDevices: [device])
+                                } else if !self.betaFirmwares[buildNumber]!.supportedDevices.contains(device) {
+                                    self.betaFirmwares[buildNumber]!.supportedDevices.append(device)
                                 }
                             }
                         }
