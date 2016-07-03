@@ -22,6 +22,7 @@ class BetaViewController: UITableViewController {
         if !hasAppeared {
             self.refreshControl?.beginRefreshing()
             self.startReceive()
+      
             hasAppeared = true
         }
     }
