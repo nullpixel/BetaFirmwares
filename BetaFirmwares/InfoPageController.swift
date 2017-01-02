@@ -10,13 +10,13 @@ import UIKit
 
 class InfoPageController: UITableViewController {
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 2 && indexPath.section == 0 {
-            if let url = NSURL(string: "https://m.reddit.com/r/iOSBeta") where UIApplication.sharedApplication().canOpenURL(url) {
-                UIApplication.sharedApplication().openURL(url)
+            if let url = URL(string: "https://m.reddit.com/r/iOSBeta"), UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.openURL(url)
             }
         }
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }

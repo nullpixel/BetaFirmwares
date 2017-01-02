@@ -16,7 +16,7 @@ class BetaViewController: UITableViewController {
     var betaFirmwares = [String: Firmware]()
     var hasAppeared = false
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         if !hasAppeared {
@@ -30,9 +30,9 @@ class BetaViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func tableView(tableView: UITableView,
-                   cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         let firmware = betaFirmwares[betaFirmwares.keyOfIndex(indexPath.row)]!
         
@@ -43,13 +43,13 @@ class BetaViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let firmware = betaFirmwares[betaFirmwares.keyOfIndex(indexPath.row)]
-        self.performSegueWithIdentifier("ShowDetail", sender: firmware)
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        self.performSegue(withIdentifier: "ShowDetail", sender: firmware)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.betaFirmwares.count
     }
     
@@ -62,19 +62,19 @@ class BetaViewController: UITableViewController {
         } else {
             DataReceiver.sharedInstance.getJSON() { json in
                 guard let json = json else {
-                    let alert = UIAlertController(title: "Couldn't receive betas", message: "An error occurred while trying ot receive a list of the current betas on the OTA server.", preferredStyle: .Alert)
-                    let action = UIAlertAction(title: "Try Again", style: .Cancel, handler: { _ in
+                    let alert = UIAlertController(title: "Couldn't receive betas", message: "An error occurred while trying ot receive a list of the current betas on the OTA server.", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "Try Again", style: .cancel, handler: { _ in
                         self.startReceive()
                     })
                     alert.addAction(action)
-                    self.presentViewController(alert, animated: true, completion: nil)
+                    self.present(alert, animated: true, completion: nil)
                     return
                 }
                 self.betaFirmwares = [String: Firmware]()
                 for (deviceID, device) in json.dictionaryValue {
-                    if let firmwares = device["firmwares"].array, deviceName = device["name"].string {
+                    if let firmwares = device["firmwares"].array, let deviceName = device["name"].string {
                         for firmware in firmwares {
-                            if let version = firmware["version"].string, releaseType = firmware["releasetype"].string, buildNumber = firmware["buildid"].string where releaseType == "Beta" {
+                            if let version = firmware["version"].string, let releaseType = firmware["releasetype"].string, let buildNumber = firmware["buildid"].string, releaseType == "Beta" {
                                 let device = Device(name: deviceName, identifier: deviceID)
                                 if !self.betaFirmwares.keys.contains(buildNumber) {
                                     self.betaFirmwares[buildNumber] = Firmware(name: version, buildNumber: buildNumber, supportedDevices: [device])
@@ -85,23 +85,25 @@ class BetaViewController: UITableViewController {
                         }
                     }
                 }
-                dispatch_async(dispatch_get_main_queue()) {
+                
+                DispatchQueue.main.async(execute: { () -> Void in
                     self.tableView.reloadData()
                     self.refreshControl?.endRefreshing()
-                }
+                })
+                
             }
         }
     }
 
-    @IBAction func refreshCalled(sender: AnyObject) {
+    @IBAction func refreshCalled(_ sender: AnyObject) {
         self.startReceive()
     }
     
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        super.prepareForSegue(segue, sender: sender)
-        if let firmware = sender as? Firmware, let destVC = segue.destinationViewController as? DetailViewController where segue.identifier == "ShowDetail" {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if let firmware = sender as? Firmware, let destVC = segue.destination as? DetailViewController, segue.identifier == "ShowDetail" {
             destVC.firmware = firmware
         }
     }
