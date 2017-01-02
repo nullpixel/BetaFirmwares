@@ -1,0 +1,3 @@
+[submodule "BetaFirmwares/SwiftyJSON"]
+	path = BetaFirmwares/SwiftyJSON
+	url = https://github.com/SwiftyJSON/SwiftyJSON.git
