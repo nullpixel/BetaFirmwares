@@ -9,7 +9,7 @@
 import Foundation
 
 extension Dictionary {
-    func keyOfIndex(index: Int) -> Key {
+    func keyOfIndex(_ index: Int) -> Key {
         let keys = Array(self.keys)
         return keys[index]
     }

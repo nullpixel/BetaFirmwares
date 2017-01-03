@@ -9,13 +9,13 @@
 import UIKit
 
 class HairlineView: UIView {
-    let hairlineWidth = (1.0 / UIScreen.mainScreen().scale) / 2
+    let hairlineWidth = (1.0 / UIScreen.main.scale) / 2
     var bottomBorder = CALayer()
 
     override func awakeFromNib() {
         super.awakeFromNib()
         bottomBorder.frame = CGRect(x: 0, y: self.frame.size.height - hairlineWidth, width: self.frame.size.width, height: hairlineWidth)
-        bottomBorder.backgroundColor = UIColor(white: 0.3, alpha: 0.2).CGColor
+        bottomBorder.backgroundColor = UIColor(white: 0.3, alpha: 0.2).cgColor
         self.layer.addSublayer(bottomBorder)
     }
     

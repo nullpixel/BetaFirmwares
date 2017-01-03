@@ -12,19 +12,19 @@ import SwiftyJSON
 class DataReceiver: NSObject {
     static let sharedInstance = DataReceiver()
     
-    private let jsonURL = NSURL(string: "https://api.ipsw.me/v2.1/ota.json")!
+    fileprivate let jsonURL = URL(string: "https://api.ipsw.me/v2.1/ota.json")!
     
-    func getJSON(completionHandler: (JSON?) -> Void) {
-        let request = NSURLRequest(URL: jsonURL, cachePolicy: .ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
+    func getJSON(_ completionHandler: @escaping (JSON?) -> Void) {
+        let request = URLRequest(url: jsonURL, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
 
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error -> Void in
+        let task = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error -> Void in
             if let jsonData = data {
                 let json = JSON(data: jsonData)
                 completionHandler(json)
             } else {
                 completionHandler(nil)
             }
-        }
+        }) 
         task.resume()
     }
     
